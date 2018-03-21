@@ -7,26 +7,29 @@ $checkbox-cap: 0.5rem;
 .oc-checkbox {
   height: $icon-side-length+2*$checkbox-cap;
   
-  a {
+  .icon {
     outline: none !important;
     display: inline-block;
     height: 100%;
     width: $icon-side-length+2*$checkbox-cap;
     line-height: 100%;
-    margin-right: $checkbox-cap;
     
     svg {
+      outline: none;
       background-color: $oc-color-white;
       height: $icon-side-length;
       width: $icon-side-length;
       margin: $checkbox-cap;
       color: $oc-color-white;
       cursor: pointer;
-      box-shadow: 0 0 0 0.1rem $oc-color-primary-azure;
+      border: solid 0.1rem $oc-color-primary-azure;
     }
   }
-  a:focus {
-    box-shadow: inset 0 0 0 0.3rem $oc-color-primary-yellow;
+  &:not(.disabled) {
+    a.icon:focus svg, svg:focus {
+      box-shadow: 0px 0px 0 1px $oc-color-white,
+      0 0 0 3px $oc-color-primary-yellow;
+    }
   }
   &.checked svg {
     color: $oc-color-primary-azure;
@@ -35,7 +38,8 @@ $checkbox-cap: 0.5rem;
     color: $oc-color-text-disabled;
     svg {
       color: $oc-color-text-disabled;
-      box-shadow: 0 0 0 0.1rem $oc-color-text-disabled;
+      border: solid 0.1rem $oc-color-text-disabled;
+      cursor: default;
     }
   }
   span {

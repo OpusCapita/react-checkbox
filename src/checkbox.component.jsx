@@ -27,13 +27,21 @@ export default class Checkbox extends React.PureComponent {
     }
   }
 
+  renderCheckbox = className => (
+    this.props.disabled ? 
+      <div className={className}>
+        <FaCheck />
+      </div> :
+      <a className={className} href="#" onClick={this.onClick}>
+        <FaCheck />
+      </a>
+  )
+
   render() {
     const className = classNames('oc-checkbox', this.props.className, { checked: this.props.checked, disabled: this.props.disabled });
     return (
       <div className={className}>
-        <a href="#" onClick={this.onClick}>
-          <FaCheck />
-        </a>
+        {this.renderCheckbox('icon')}
         <span>{this.props.label}</span>
       </div>
     );
