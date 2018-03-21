@@ -1,7 +1,7 @@
 # react-checkbox
 
 ### Description
-Describe the component here
+OpusCapita styled checkbox component
 
 ### Installation
 ```
@@ -23,18 +23,23 @@ Also you need to configure sass loader, since all the styles are in sass format.
 ### API
 | Prop name                | Type             | Default                                  | Description                              |
 | ------------------------ | ---------------- | ---------------------------------------- | ---------------------------------------- |
-| propName                 | string           |                                          | Describe the prop here                   |
+| onChange                 | function         | required                                 | Callback function for checkbox           |
+| checked                  | boolean          | false                                    | Is checked or not                        |
+| className                | string           |                                          | Additional class for component           |
+| disabled                 | boolean          | false                                    | Is disabled                              |
+| id                       | string           |                                          | ID                                       |
+| label                    | string or node   |                                          | Checkbox label                           |
 
 ### Code example
 ```jsx
 import React from 'react';
-import { Example } from '@opuscapita/react-component-example';
+import Checkbox from '@opuscapita/react-checkbox';
 
 export default class ReactView extends React.Component {
   render() {
     return (
-      <Example
-        propName="propValue"
+      <Checkbox
+        onChange={this.onChange}
       />
     );
   }
