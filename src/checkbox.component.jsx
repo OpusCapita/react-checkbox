@@ -1,8 +1,8 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import FaCheck from 'react-icons/lib/fa/check';
-import { Checkbox as C } from 'react-bootstrap';
 import './checkbox.component.scss';
 
 export default class Checkbox extends React.PureComponent {
@@ -11,13 +11,15 @@ export default class Checkbox extends React.PureComponent {
     checked: PropTypes.bool,
     className: PropTypes.string,
     disabled: PropTypes.bool,
-    label: PropTypes.string,
+    id: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
   }
 
   static defaultProps = {
     checked: false,
     className: null,
     disabled: false,
+    id: null,
     label: null,
   }
 
@@ -28,7 +30,7 @@ export default class Checkbox extends React.PureComponent {
   }
 
   renderCheckbox = className => (
-    this.props.disabled ? 
+    this.props.disabled ?
       <div className={className}>
         <FaCheck />
       </div> :
@@ -40,7 +42,7 @@ export default class Checkbox extends React.PureComponent {
   render() {
     const className = classNames('oc-checkbox', this.props.className, { checked: this.props.checked, disabled: this.props.disabled });
     return (
-      <div className={className}>
+      <div className={className} id={this.props.id}>
         {this.renderCheckbox('icon')}
         <span>{this.props.label}</span>
       </div>
