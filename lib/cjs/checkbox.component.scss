@@ -6,14 +6,12 @@ $checkbox-cap: 0.5rem;
 
 .oc-checkbox {
   height: $icon-side-length+2*$checkbox-cap;
-  
   .icon {
     outline: none !important;
     display: inline-block;
     height: 100%;
     width: $icon-side-length+2*$checkbox-cap;
     line-height: 100%;
-    
     svg {
       outline: none;
       background-color: $oc-color-white;
