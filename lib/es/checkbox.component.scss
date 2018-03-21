@@ -1,0 +1,49 @@
+@import "~@opuscapita/oc-cm-common-styles/styles/colors";
+@import "~@opuscapita/oc-cm-common-styles/styles/variables";
+
+$icon-side-length: 1.6rem;
+$checkbox-cap: 0.5rem;
+
+.oc-checkbox {
+  height: $icon-side-length+2*$checkbox-cap;
+  
+  .icon {
+    outline: none !important;
+    display: inline-block;
+    height: 100%;
+    width: $icon-side-length+2*$checkbox-cap;
+    line-height: 100%;
+    
+    svg {
+      outline: none;
+      background-color: $oc-color-white;
+      height: $icon-side-length;
+      width: $icon-side-length;
+      margin: $checkbox-cap;
+      color: $oc-color-white;
+      cursor: pointer;
+      border: solid 0.1rem $oc-color-primary-azure;
+    }
+  }
+  &:not(.disabled) {
+    a.icon:focus svg, svg:focus {
+      box-shadow: 0px 0px 0 1px $oc-color-white,
+      0 0 0 3px $oc-color-primary-yellow;
+    }
+  }
+  &.checked svg {
+    color: $oc-color-primary-azure;
+  }
+  &.disabled {
+    color: $oc-color-text-disabled;
+    svg {
+      color: $oc-color-text-disabled;
+      border: solid 0.1rem $oc-color-text-disabled;
+      cursor: default;
+    }
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

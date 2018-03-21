@@ -99,7 +99,7 @@
     "write-file-webpack-plugin": "4.2.0"
   },
   "dependencies": {
-    "@opuscapita/oc-cm-common-styles": "2.0.2",
+    "@opuscapita/oc-cm-common-styles": "git+https://github.com/OpusCapita/oc-cm-common-styles.git#fontawesome",
     "classnames": "2.2.5"
   },
   "repository": {
