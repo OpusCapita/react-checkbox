@@ -31,6 +31,7 @@ export default class Checkbox extends React.PureComponent {
     if (!this.props.disabled) {
       this.props.onChange(e);
     }
+    e.preventDefault();
   }
 
   renderCheckbox = className => (

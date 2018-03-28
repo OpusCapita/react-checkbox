@@ -23,6 +23,9 @@ $checkbox-cap: 0.5rem;
       border: solid 0.1rem $oc-color-primary-azure;
     }
   }
+  a.icon:focus {
+    box-shadow: none;
+  }
   &:not(.disabled) {
     a.icon:focus svg, svg:focus {
       box-shadow: 0px 0px 0 1px $oc-color-white,
