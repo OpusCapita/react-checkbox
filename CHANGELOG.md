@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Added nowrap white-space
   
 ## 1.1.1
 * Focus style fixed
