@@ -23,7 +23,7 @@ export default class Checkbox extends React.PureComponent {
     disabled: false,
     id: null,
     label: null,
-    onKeyDown: null,
+    onKeyDown: () => {},
     inputRef: null,
   }
 
@@ -34,12 +34,19 @@ export default class Checkbox extends React.PureComponent {
     e.preventDefault();
   }
 
+  onKeyDown = (e) => {
+    if (e.keyCode === 32 && !this.props.disabled) {
+      this.props.onChange(e);
+    }
+    this.props.onKeyDown(e);
+  }
+
   renderCheckbox = className => (
     this.props.disabled ?
       <div className={className}>
         <FaCheck />
       </div> :
-      <a className={className} href="#" onClick={this.onClick} onKeyDown={this.props.onKeyDown} ref={this.props.inputRef} >
+      <a className={className} href="#" onClick={this.onClick} onKeyDown={this.onKeyDown} ref={this.props.inputRef} >
         <FaCheck />
       </a>
   )
