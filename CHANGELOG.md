@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Fixed: issue #5 Can't check/uncheck with space bar
 
 ## 1.1.2
 * Added nowrap white-space
