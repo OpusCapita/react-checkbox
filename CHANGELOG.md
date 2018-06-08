@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.1.3
 * Fixed: issue #5 Can't check/uncheck with space bar
 
 ## 1.1.2
