@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.1.4
 * Updated oc-cm-common-styles to 2.1.0
 
 ## 1.1.3
