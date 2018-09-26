@@ -98,7 +98,7 @@
     "write-file-webpack-plugin": "4.2.0"
   },
   "dependencies": {
-    "@opuscapita/oc-cm-common-styles": "2.0.4",
+    "@opuscapita/oc-cm-common-styles": "2.1.0",
     "react-icons": "2.2.7",
     "classnames": "2.2.5"
   },
