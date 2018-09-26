@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Updated oc-cm-common-styles to 2.1.0
 
 ## 1.1.3
 * Fixed: issue #5 Can't check/uncheck with space bar
