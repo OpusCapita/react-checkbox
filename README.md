@@ -24,11 +24,14 @@ Also you need to configure sass loader, since all the styles are in sass format.
 | Prop name                | Type             | Default                                  | Description                              |
 | ------------------------ | ---------------- | ---------------------------------------- | ---------------------------------------- |
 | onChange                 | function         | required                                 | Callback function for checkbox           |
+| onFocus                  | function         | () => {}                                 | onFocus callback function for checkbox   |
+| onBlur                   | function         | () => {}                                 | onBlur callback function for checkbox    |
 | checked                  | boolean          | false                                    | Is checked or not                        |
 | className                | string           |                                          | Additional class for component           |
 | disabled                 | boolean          | false                                    | Is disabled                              |
 | id                       | string           |                                          | ID                                       |
 | label                    | string or node   |                                          | Checkbox label                           |
+| tabIndex                 | string           | 0                                        | tabIndex                                 |
 
 ### Code example
 ```jsx

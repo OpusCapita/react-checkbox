@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 1.2.0
+* Optional onBlur and onFocus callbacks and tabIndex added
+
 ## 1.1.4
 * Updated oc-cm-common-styles to 2.1.0
 
