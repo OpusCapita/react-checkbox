@@ -14,7 +14,10 @@ export default class Checkbox extends React.PureComponent {
     id: PropTypes.string,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     onKeyDown: PropTypes.func,
+    onFocus: PropTypes.func,
+    onBlur: PropTypes.func,
     inputRef: PropTypes.func,
+    tabIndex: PropTypes.string,
   }
 
   static defaultProps = {
@@ -24,7 +27,10 @@ export default class Checkbox extends React.PureComponent {
     id: null,
     label: null,
     onKeyDown: () => {},
+    onFocus: () => {},
+    onBlur: () => {},
     inputRef: null,
+    tabIndex: 0,
   }
 
   onClick = (e) => {
@@ -46,7 +52,16 @@ export default class Checkbox extends React.PureComponent {
       <div className={className}>
         <FaCheck />
       </div> :
-      <a className={className} href="#" onClick={this.onClick} onKeyDown={this.onKeyDown} ref={this.props.inputRef} >
+      <a
+        className={className}
+        href="#"
+        onClick={this.onClick}
+        onKeyDown={this.onKeyDown}
+        ref={this.props.inputRef}
+        onFocus={this.props.onFocus}
+        onBlur={this.props.onBlur}
+        tabIndex={this.props.tabIndex}
+      >
         <FaCheck />
       </a>
   )
