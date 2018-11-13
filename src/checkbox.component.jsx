@@ -30,7 +30,7 @@ export default class Checkbox extends React.PureComponent {
     onFocus: () => {},
     onBlur: () => {},
     inputRef: null,
-    tabIndex: 0,
+    tabIndex: '0',
   }
 
   onClick = (e) => {

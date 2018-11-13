@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 1.2.1
+* Update packages
+
 ## 1.2.0
 * Optional onBlur and onFocus callbacks and tabIndex added
 
