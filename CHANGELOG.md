@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 1.3.1 
+* Prevent default events in event handlers
+
 ## 1.3.0
 * Checking a checkbox will now trigger a click event on an `input` element. This way we can
 pass a "real" synthetic input onChange event to a callback function.

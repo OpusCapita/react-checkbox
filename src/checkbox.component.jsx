@@ -38,8 +38,8 @@ export default class Checkbox extends React.PureComponent {
   };
 
   onClick = (e) => {
-    if (!this.props.disabled) this.props.onChange(e);
     e.preventDefault();
+    if (!this.props.disabled) this.props.onChange(e);
   };
 
   /**
@@ -54,7 +54,8 @@ export default class Checkbox extends React.PureComponent {
   /**
    * Triggers click event on checkbox input element
    */
-  triggerClick = () => {
+  triggerClick = (e) => {
+    e.preventDefault();
     this.checkbox.click();
   };
 
