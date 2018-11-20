@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.3.0
 * Checking a checkbox will now trigger a click event on an `input` element. This way we can
 pass a "real" synthetic input onChange event to a callback function.
 

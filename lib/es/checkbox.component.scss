@@ -7,6 +7,10 @@ $checkbox-cap: 0.5rem;
 .oc-checkbox {
   height: $icon-side-length+2*$checkbox-cap;
   white-space: nowrap;
+
+  input[type=checkbox] {
+    display: none;
+  }
   .icon {
     outline: none !important;
     display: inline-block;
