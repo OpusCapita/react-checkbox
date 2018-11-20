@@ -11,18 +11,18 @@ describe('Example component', () => {
     const onChange = sinon.spy();
     const wrapper = mount(<Checkbox onChange={onChange} />);
     expect(wrapper).to.exist;
-    const svg = wrapper.find('svg');
-    expect(svg).to.have.length(1);
-    svg.simulate('click');
+    const input = wrapper.find('input');
+    expect(input).to.have.length(1);
+    input.simulate('change');
     expect(onChange.calledOnce).to.be.true;
   });
 
   it('is disabled', () => {
     const onChange = sinon.spy();
     const wrapper = mount(<Checkbox onChange={onChange} disabled />);
-    const svg = wrapper.find('svg');
-    expect(svg).to.have.length(1);
-    svg.simulate('click');
+    const input = wrapper.find('input');
+    expect(input).to.have.length(1);
+    input.simulate('change');
     expect(onChange.callCount).to.equal(0);
   });
 });

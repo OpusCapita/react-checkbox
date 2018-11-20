@@ -1,5 +1,4 @@
 import React from 'react';
-import { Panel } from 'react-bootstrap';
 import Checkbox from '../../src/index';
 
 export default class ComponentView extends React.PureComponent {
