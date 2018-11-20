@@ -1,4 +1,5 @@
 import React from 'react';
+import { Panel } from 'react-bootstrap';
 import Checkbox from '../../src/index';
 
 export default class ComponentView extends React.PureComponent {
@@ -9,32 +10,37 @@ export default class ComponentView extends React.PureComponent {
       unnamed: false,
       unchecked: false,
       disabled: true,
+      event: false,
     };
   }
+
+  onCheckboxChange = (e) => {
+    this.setState({ [e.target.name]: e.target.checked });
+  };
+
+  getCheckboxes = () => {
+    const checkboxes = ['Checked', 'Unnamed', 'Unchecked', 'Disabled'];
+    return checkboxes.map(box => ({
+      id: box.toLowerCase(),
+      label: box,
+      disabled: box === 'Disabled',
+    }));
+  };
 
   render() {
     return (
       <div style={{ padding: '20px' }}>
-        <Checkbox
-          checked={this.state.checked}
-          onChange={() => { this.setState({ checked: !this.state.checked }); }}
-          label="Checked"
-        />
-        <Checkbox
-          checked={this.state.unnamed}
-          onChange={() => { this.setState({ unnamed: !this.state.unnamed }); }}
-        />
-        <Checkbox
-          checked={this.state.unchecked}
-          onChange={() => { this.setState({ unchecked: !this.state.unchecked }); }}
-          label="Unchecked"
-        />
-        <Checkbox
-          checked={this.state.disabled}
-          disabled
-          onChange={() => { this.setState({ disabled: !this.state.disabled }); }}
-          label="Disabled"
-        />
+        {this.getCheckboxes()
+          .map(checkbox => (
+            <Checkbox
+              onChange={this.onCheckboxChange}
+              id={checkbox.id}
+              label={checkbox.label}
+              checked={this.state[checkbox.id]}
+              key={checkbox.id}
+              disabled={checkbox.disabled}
+            />
+          ))}
       </div>
     );
   }

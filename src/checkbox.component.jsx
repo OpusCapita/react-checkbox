@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import FaCheck from 'react-icons/lib/fa/check';
+// App
 import './checkbox.component.scss';
 
 export default class Checkbox extends React.PureComponent {
@@ -18,7 +19,7 @@ export default class Checkbox extends React.PureComponent {
     onBlur: PropTypes.func,
     inputRef: PropTypes.func,
     tabIndex: PropTypes.string,
-  }
+  };
 
   static defaultProps = {
     checked: false,
@@ -26,26 +27,37 @@ export default class Checkbox extends React.PureComponent {
     disabled: false,
     id: null,
     label: null,
-    onKeyDown: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
+    onKeyDown: () => {
+    },
+    onFocus: () => {
+    },
+    onBlur: () => {
+    },
     inputRef: null,
     tabIndex: '0',
-  }
+  };
 
   onClick = (e) => {
-    if (!this.props.disabled) {
-      this.props.onChange(e);
-    }
+    if (!this.props.disabled) this.props.onChange(e);
     e.preventDefault();
-  }
+  };
 
+  /**
+   * Handles space key press (keyCode === 32)
+   * @param e
+   */
   onKeyDown = (e) => {
-    if (e.keyCode === 32 && !this.props.disabled) {
-      this.props.onChange(e);
-    }
+    if (e.keyCode === 32 && !this.props.disabled) this.triggerClick();
     this.props.onKeyDown(e);
-  }
+  };
+
+  /**
+   * Triggers click event on checkbox input element
+   */
+  triggerClick = () => {
+    this.checkbox.click();
+  };
+
 
   renderCheckbox = className => (
     this.props.disabled ?
@@ -55,7 +67,7 @@ export default class Checkbox extends React.PureComponent {
       <a
         className={className}
         href="#"
-        onClick={this.onClick}
+        onClick={this.triggerClick}
         onKeyDown={this.onKeyDown}
         ref={this.props.inputRef}
         onFocus={this.props.onFocus}
@@ -64,14 +76,33 @@ export default class Checkbox extends React.PureComponent {
       >
         <FaCheck />
       </a>
-  )
+  );
+
 
   render() {
-    const className = classNames('oc-checkbox', this.props.className, { checked: this.props.checked, disabled: this.props.disabled });
+    const {
+      checked, disabled, className, id, label,
+    } = this.props;
+
+    const clsNames = classNames('oc-checkbox', className, {
+      checked,
+      disabled,
+    });
+
     return (
-      <div className={className} id={this.props.id}>
+      <div className={clsNames} id={id}>
         {this.renderCheckbox('icon')}
-        <span>{this.props.label}</span>
+        <span>{label}</span>
+        <input
+          type="checkbox"
+          name={id}
+          checked={checked}
+          disabled={disabled}
+          onChange={this.onClick}
+          ref={(el) => {
+            this.checkbox = el;
+          }}
+        />
       </div>
     );
   }
