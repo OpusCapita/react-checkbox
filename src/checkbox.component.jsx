@@ -14,7 +14,6 @@ export default class Checkbox extends React.PureComponent {
     disabled: PropTypes.bool,
     id: PropTypes.string,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
-    onKeyDown: PropTypes.func,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     inputRef: PropTypes.func,
@@ -27,83 +26,78 @@ export default class Checkbox extends React.PureComponent {
     disabled: false,
     id: null,
     label: null,
-    onKeyDown: () => {
-    },
     onFocus: () => {
     },
     onBlur: () => {
     },
     inputRef: null,
-    tabIndex: '0',
+    tabIndex: null,
   };
 
-  onClick = (e) => {
-    e.preventDefault();
-    if (!this.props.disabled) this.props.onChange(e);
+  constructor() {
+    super();
+    this.state = { focused: false };
+  }
+
+  onFocus = (e) => {
+    this.setState({ focused: true }, () => {
+      this.props.onFocus(e);
+    });
   };
 
-  /**
-   * Handles space key press (keyCode === 32)
-   * @param e
-   */
-  onKeyDown = (e) => {
-    if (e.keyCode === 32 && !this.props.disabled) this.triggerClick();
-    this.props.onKeyDown(e);
+  onBlur = (e) => {
+    this.setState({ focused: false }, () => {
+      this.props.onBlur(e);
+    });
   };
 
-  /**
-   * Triggers click event on checkbox input element
-   */
-  triggerClick = (e) => {
-    e.preventDefault();
-    this.checkbox.click();
+  onChange = (e) => {
+    const { disabled } = this.props;
+    if (!disabled) this.props.onChange(e);
   };
 
+  renderCheckbox = (className) => {
+    const {
+      checked, disabled, id, label, tabIndex,
+    } = this.props;
 
-  renderCheckbox = className => (
-    this.props.disabled ?
-      <div className={className}>
-        <FaCheck />
-      </div> :
-      <a
+    return (
+      <label
+        htmlFor={`${this.props.id}-checkbox`}
         className={className}
-        href="#"
-        onClick={this.triggerClick}
-        onKeyDown={this.onKeyDown}
-        ref={this.props.inputRef}
-        onFocus={this.props.onFocus}
-        onBlur={this.props.onBlur}
-        tabIndex={this.props.tabIndex}
       >
-        <FaCheck />
-      </a>
-  );
+        <input
+          type="checkbox"
+          name={id}
+          id={`${id}-checkbox`}
+          checked={checked}
+          disabled={disabled}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          onFocus={this.onFocus}
+          ref={this.props.inputRef}
+          tabIndex={tabIndex}
+        />
+        <FaCheck focusable="false" />
+        {label}
+      </label>);
+  };
 
 
   render() {
     const {
-      checked, disabled, className, id, label,
+      checked, disabled, className, id,
     } = this.props;
 
     const clsNames = classNames('oc-checkbox', className, {
       checked,
       disabled,
+      focused: this.state.focused,
     });
 
     return (
       <div className={clsNames} id={id}>
         {this.renderCheckbox('icon')}
-        <span>{label}</span>
-        <input
-          type="checkbox"
-          name={id}
-          checked={checked}
-          disabled={disabled}
-          onChange={this.onClick}
-          ref={(el) => {
-            this.checkbox = el;
-          }}
-        />
       </div>
     );
   }

@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Refactored the component logic. Removed click triggering, etc.
 
 ## 1.3.1 
 * Prevent default events in event handlers
