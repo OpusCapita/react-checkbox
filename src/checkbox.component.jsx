@@ -86,7 +86,8 @@ export default class Checkbox extends React.PureComponent {
 
   render() {
     const {
-      checked, disabled, className, id,
+      checked, disabled, className, id, label, tabIndex, onBlur, onFocus, onChange,
+      inputRef, ...rest
     } = this.props;
 
     const clsNames = classNames('oc-checkbox', className, {
@@ -96,7 +97,7 @@ export default class Checkbox extends React.PureComponent {
     });
 
     return (
-      <div className={clsNames} id={id}>
+      <div className={clsNames} id={id} {...rest}>
         {this.renderCheckbox('icon')}
       </div>
     );

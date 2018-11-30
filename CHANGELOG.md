@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 1.4.1
+* Additional props are now passed to the container 
+
 ## 1.4.0
 * Refactored the component logic. Removed click triggering, etc.
 
