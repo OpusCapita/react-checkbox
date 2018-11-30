@@ -12,7 +12,10 @@ describe('Example component', () => {
     const wrapper = mount(<Checkbox onChange={onChange} />);
     expect(wrapper).to.exist;
     const input = wrapper.find('input');
-    expect(input).to.have.length(1);
+    expect(input)
+      .to
+      .have
+      .length(1);
     input.simulate('change');
     expect(onChange.calledOnce).to.be.true;
   });
@@ -21,8 +24,13 @@ describe('Example component', () => {
     const onChange = sinon.spy();
     const wrapper = mount(<Checkbox onChange={onChange} disabled />);
     const input = wrapper.find('input');
-    expect(input).to.have.length(1);
+    expect(input)
+      .to
+      .have
+      .length(1);
     input.simulate('change');
-    expect(onChange.callCount).to.equal(0);
+    expect(onChange.callCount)
+      .to
+      .equal(0);
   });
 });
