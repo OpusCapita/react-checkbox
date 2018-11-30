@@ -8,15 +8,32 @@ $checkbox-cap: 0.5rem;
   height: $icon-side-length+2*$checkbox-cap;
   white-space: nowrap;
 
+  // This needs to be "visible" so we can focus on it
   input[type=checkbox] {
-    display: none;
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+    margin: 0;
   }
+
+  label {
+    font-weight: normal;
+  }
+
+  &.focused {
+    .icon svg {
+      box-shadow: 0px 0px 0 1px $oc-color-white,
+      0 0 0 3px $oc-color-primary-yellow;
+    }
+  }
+
   .icon {
     outline: none !important;
     display: inline-block;
     height: 100%;
     width: $icon-side-length+2*$checkbox-cap;
     line-height: 100%;
+
     svg {
       outline: none;
       background-color: $oc-color-white;
@@ -28,26 +45,22 @@ $checkbox-cap: 0.5rem;
       border: solid 0.1rem $oc-color-primary-azure;
     }
   }
-  a.icon:focus {
-    box-shadow: none;
-  }
-  &:not(.disabled) {
-    a.icon:focus svg, svg:focus {
-      box-shadow: 0px 0px 0 1px $oc-color-white,
-      0 0 0 3px $oc-color-primary-yellow;
-    }
-  }
+
+
   &.checked svg {
     color: $oc-color-primary-azure;
   }
+
   &.disabled {
     color: $oc-color-text-disabled;
+
     svg {
       color: $oc-color-text-disabled;
       border: solid 0.1rem $oc-color-text-disabled;
       cursor: default;
     }
   }
+
   span {
     display: inline-block;
     vertical-align: middle;

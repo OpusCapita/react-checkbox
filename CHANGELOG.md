@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.4.0
 * Refactored the component logic. Removed click triggering, etc.
 
 ## 1.3.1 
