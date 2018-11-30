@@ -17,6 +17,7 @@ export default class Checkbox extends React.PureComponent {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     inputRef: PropTypes.func,
+    tabIndex: PropTypes.string,
   };
 
   static defaultProps = {
@@ -30,6 +31,7 @@ export default class Checkbox extends React.PureComponent {
     onBlur: () => {
     },
     inputRef: null,
+    tabIndex: null,
   };
 
   constructor() {
@@ -56,7 +58,7 @@ export default class Checkbox extends React.PureComponent {
 
   renderCheckbox = (className) => {
     const {
-      checked, disabled, id, label,
+      checked, disabled, id, label, tabIndex,
     } = this.props;
 
     return (
@@ -74,6 +76,7 @@ export default class Checkbox extends React.PureComponent {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           ref={this.props.inputRef}
+          tabIndex={tabIndex}
         />
         <FaCheck focusable="false" />
         {label}
