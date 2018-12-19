@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 1.4.2pm 
 * Fixed a styling issue that only occurred in Firefox
 
 ## 1.4.1
