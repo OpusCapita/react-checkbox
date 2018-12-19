@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Fixed a styling issue that only occurred in Firefox
 
 ## 1.4.1
 * Additional props are now passed to the container 
