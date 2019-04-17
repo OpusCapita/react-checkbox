@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Add Storybook support
+* Disabled label text selection
 
 ## 1.4.2pm 
 * Fixed a styling issue that only occurred in Firefox

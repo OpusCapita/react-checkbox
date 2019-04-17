@@ -19,6 +19,8 @@ $checkbox-cap: 0.5rem;
 
   label {
     font-weight: normal;
+    user-select: none;
+    -ms-user-select: none;
   }
 
   &.focused {
