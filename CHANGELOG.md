@@ -3,10 +3,12 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+
+## 2.0.0
 * Added `value` and `name` props to make checkbox act more like a real HTML5 checkbox. Previously
 name was generated from `id` prop.
 
-## 1.4.2pm 
+## 1.4.2 
 * Fixed a styling issue that only occurred in Firefox
 
 ## 1.4.1
