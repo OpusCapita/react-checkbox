@@ -34,8 +34,8 @@ export default class Checkbox extends React.PureComponent {
     },
     inputRef: null,
     tabIndex: null,
-    name: null,
-    value: null,
+    name: '',
+    value: '',
   };
 
   constructor() {

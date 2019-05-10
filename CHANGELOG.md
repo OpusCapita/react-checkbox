@@ -4,6 +4,9 @@
 
 ## <next>
 
+## 2.0.1
+* Fix `name` and `value` defaultProps
+
 ## 2.0.0
 * Added `value` and `name` props to make checkbox act more like a real HTML5 checkbox. Previously
 name was generated from `id` prop.
