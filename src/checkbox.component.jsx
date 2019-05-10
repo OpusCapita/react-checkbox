@@ -13,6 +13,8 @@ export default class Checkbox extends React.PureComponent {
     className: PropTypes.string,
     disabled: PropTypes.bool,
     id: PropTypes.string,
+    name: PropTypes.string,
+    value: PropTypes.string,
     label: PropTypes.oneOfType([PropTypes.element, PropTypes.string]),
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
@@ -32,6 +34,8 @@ export default class Checkbox extends React.PureComponent {
     },
     inputRef: null,
     tabIndex: null,
+    name: null,
+    value: null,
   };
 
   constructor() {
@@ -58,17 +62,18 @@ export default class Checkbox extends React.PureComponent {
 
   renderCheckbox = (className) => {
     const {
-      checked, disabled, id, label, tabIndex,
+      checked, disabled, id, label, tabIndex, name, value,
     } = this.props;
 
     return (
       <label
-        htmlFor={`${this.props.id}-checkbox`}
+        htmlFor={`${id}-checkbox`}
         className={className}
       >
         <input
           type="checkbox"
-          name={id}
+          name={name}
+          value={value}
           id={`${id}-checkbox`}
           checked={checked}
           disabled={disabled}
