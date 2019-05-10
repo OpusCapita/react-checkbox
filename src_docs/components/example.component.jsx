@@ -14,13 +14,15 @@ export default class ComponentView extends React.PureComponent {
   }
 
   onCheckboxChange = (e) => {
-    this.setState({ [e.target.name]: e.target.checked });
+    this.setState({ [e.target.value]: e.target.checked });
   };
 
   getCheckboxes = () => {
     const checkboxes = ['Checked', 'Unnamed', 'Unchecked', 'Disabled'];
     return checkboxes.map(box => ({
-      id: box.toLowerCase(),
+      id: `${box.toLowerCase()}-checkbox`,
+      value: box.toLowerCase(),
+      name: 'boxes',
       label: box,
       disabled: box === 'Disabled',
     }));
@@ -34,8 +36,10 @@ export default class ComponentView extends React.PureComponent {
             <Checkbox
               onChange={this.onCheckboxChange}
               id={checkbox.id}
+              name={checkbox.name}
+              value={checkbox.value}
               label={checkbox.label}
-              checked={this.state[checkbox.id]}
+              checked={this.state[checkbox.value]}
               key={checkbox.id}
               disabled={checkbox.disabled}
             />
