@@ -55,8 +55,11 @@ $checkbox-cap: 0.5rem;
   &.disabled {
     color: $oc-color-text-disabled;
 
-    svg {
+    &.checked svg {
       color: $oc-color-text-disabled;
+    }
+    svg {
+      color: $oc-color-white;
       border: solid 0.1rem $oc-color-text-disabled;
       cursor: default;
     }
