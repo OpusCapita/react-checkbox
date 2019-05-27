@@ -3,6 +3,7 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Fixed: disabled unchecked must show empty checkbox
 
 ## 2.0.1
 * Fix `name` and `value` defaultProps
@@ -11,16 +12,16 @@
 * Added `value` and `name` props to make checkbox act more like a real HTML5 checkbox. Previously
 name was generated from `id` prop.
 
-## 1.4.2 
+## 1.4.2
 * Fixed a styling issue that only occurred in Firefox
 
 ## 1.4.1
-* Additional props are now passed to the container 
+* Additional props are now passed to the container
 
 ## 1.4.0
 * Refactored the component logic. Removed click triggering, etc.
 
-## 1.3.1 
+## 1.3.1
 * Prevent default events in event handlers
 
 ## 1.3.0
@@ -41,7 +42,7 @@ pass a "real" synthetic input onChange event to a callback function.
 
 ## 1.1.2
 * Added nowrap white-space
-  
+
 ## 1.1.1
 * Focus style fixed
 

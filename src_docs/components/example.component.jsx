@@ -18,13 +18,13 @@ export default class ComponentView extends React.PureComponent {
   };
 
   getCheckboxes = () => {
-    const checkboxes = ['Checked', 'Unnamed', 'Unchecked', 'Disabled'];
+    const checkboxes = ['Checked', 'Unnamed', 'Unchecked', 'Disabled', 'Disabled unchecked'];
     return checkboxes.map(box => ({
       id: `${box.toLowerCase()}-checkbox`,
       value: box.toLowerCase(),
       name: 'boxes',
       label: box,
-      disabled: box === 'Disabled',
+      disabled: box.includes('Disabled'),
     }));
   };
 
