@@ -3,6 +3,8 @@
 * In general follow (https://docs.npmjs.com/getting-started/semantic-versioning) versioning.
 
 ## <next>
+* Add Storybook support
+* Disabled label text selection
 
 ## 2.0.2
 * Fixed: disabled unchecked must show empty checkbox
